@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enviar una pista | Archivo 404</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark" data-bs-theme="dark" aria-label="Navegación principal">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo-archivo404.jpg" alt="Logo de la Página">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./casos.html">Casos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./expedientes.html">Expedientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./teorias.html">Teorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./contacto.html" aria-current="page">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1>Enviar Una Pista</h1>
+
+        <section class="intro-section">
+            <h2>¿Tenés información?</h2>
+            <p>
+                Si conocés datos sobre alguno de los casos del archivo, tenés
+                documentación que no aparece en nuestros expedientes o fuiste
+                testigo de algo que no encaja en ninguna explicación conocida,
+                podés escribirnos. El equipo de Archivo 404 revisa cada mensaje.
+            </p>
+            <figure>
+                <img src="../img/buzon-pistas.jpg" alt="Imágen con lupa observando documentos y cartas" />
+                <figcaption>Mesa de trabajo del equipo de investigación de Archivo 404.</figcaption>
+            </figure>
+        </section>
+
+        <section class="contact-form">
+            <h2>Formulario de contacto</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="nombre">Nombre o alias:</label><br />
+                    <input type="text" id="nombre" name="nombre" placeholder="Podés usar un alias si preferís" required />
+                </p>
+
+                <p>
+                    <label for="email">Correo electrónico:</label><br />
+                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+                </p>
+
+                <p>
+                    <label for="caso-relacionado">Caso relacionado (opcional):</label><br />
+                    <input type="text" id="caso-relacionado" name="caso-relacionado" placeholder="Ej: Paso Dyatlov, Mary Celeste..." />
+                </p>
+
+                <fieldset>
+                    <legend>Tipo de información:</legend>
+
+                    <input type="radio" id="testimonio" name="tipo-info" value="testimonio" />
+                    <label for="testimonio">Testimonio propio</label><br />
+
+                    <input type="radio" id="documento" name="tipo-info" value="documento" />
+                    <label for="documento">Documento o fuente</label><br />
+
+                    <input type="radio" id="correccion" name="tipo-info" value="correccion" />
+                    <label for="correccion">Corrección de datos</label><br />
+
+                    <input type="radio" id="caso-nuevo" name="tipo-info" value="caso-nuevo" />
+                    <label for="caso-nuevo">Caso nuevo</label>
+                </fieldset>
+
+                <p>
+                    <label for="mensaje">Tu pista o testimonio:</label><br />
+                    <textarea id="mensaje" name="mensaje" placeholder="Contanos qué sabés, viste o encontraste..." required></textarea>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="anonimo" name="anonimo" />
+                    <label for="anonimo">Prefiero que mi identidad no se publique</label>
+                </p>
+
+                <p>
+                    <input type="submit" value="Enviar pista" class="btn-submit" />
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Archivo 404. Todos los derechos reservados.</p>
+        <ul class="social-links">
+            <li><a href="https://www.instagram.com/" target="_blank"><img src="../img/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/" target="_blank"><img src="../img/x.png" alt="X"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a></li>
+        </ul>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
