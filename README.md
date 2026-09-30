@@ -4,9 +4,7 @@ Sitio del curso de Desarrollo Web (Coderhouse). Reúne fichas, expedientes y teo
 
 ## Sitio desplegado
 
-Enlace a GitHub Pages: https://TU-USUARIO.github.io/archivo-404/
-
-Reemplazá `TU-USUARIO` por tu usuario de GitHub después de activar GitHub Pages y volvé a subir el README.
+Enlace a GitHub Pages: https://ValennSosa.github.io/archivo-404/
 
 ## Páginas
 
