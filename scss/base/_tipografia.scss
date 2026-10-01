@@ -3,17 +3,39 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700&display=swap");
 
+@keyframes aparecer-titulo {
+    from {
+        opacity: 0;
+        transform: translateY(var(--entrada-y, 8px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 h1 {
     font-family: $font-titulo;
     font-size: clamp(1.5rem, 4vw, 2.4rem);
     font-weight: 400;
     color: $color-acento-vivo;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     line-height: 1.3;
     border-bottom: 1px solid $color-borde;
-    padding-bottom: 16px;
-    margin-bottom: 24px;
+    padding-bottom: $espacio-md;
+    margin-bottom: $espacio-lg;
     text-transform: uppercase;
+    overflow-wrap: break-word;
+    @include animar-entrada(8px, 0.55s);
+
+    @include desde($bp-tablet) {
+        letter-spacing: 2px;
+    }
+
+    @include desde($bp-desktop) {
+        letter-spacing: 3px;
+    }
 }
 
 h2 {
@@ -26,9 +48,10 @@ h2 {
     margin-bottom: 16px;
     border-left: 3px solid $color-acento;
     padding-left: 12px;
+    overflow-wrap: break-word;
 
-    @media (min-width: $bp-desktop) {
-        margin-top: 48px;
+    @include desde($bp-desktop) {
+        margin-top: $espacio-base * 6;
     }
 }
 
@@ -39,11 +62,13 @@ h3 {
     color: $color-acento-vivo;
     letter-spacing: 1px;
     margin-bottom: 8px;
+    overflow-wrap: break-word;
 }
 
 p {
     margin-bottom: 16px;
     color: $color-texto-suave;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -60,5 +85,11 @@ a {
 
     &:focus {
         @include foco(2px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    h1 {
+        animation: none;
     }
 }

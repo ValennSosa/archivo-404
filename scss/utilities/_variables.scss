@@ -32,8 +32,15 @@ $degradado-caption: linear-gradient(transparent, rgba(12, 10, 9, 0.92) 42%);
 $font-texto: "Inter", sans-serif;
 $font-titulo: "Special Elite", cursive;
 
+$bp-tablet: 768px;
 $bp-navbar: 992px;
 $bp-desktop: 1024px;
+
+$espacio-base: 8px;
+$espacio-md: $espacio-base * 2;
+$espacio-lg: $espacio-base * 3;
+$espacio-xl: $espacio-base * 4;
+$espacio-2xl: $espacio-base * 5;
 
 $transicion-color: color 0.25s ease;
 $transicion-nav: color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;

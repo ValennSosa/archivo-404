@@ -80,7 +80,7 @@
     padding: 8px;
     margin-top: 10px;
 
-    @media (min-width: $bp-navbar) {
+    @include desde($bp-navbar) {
         background-color: transparent;
         border: 0;
         padding: 0;

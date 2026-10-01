@@ -34,6 +34,8 @@ textarea {
 }
 
 fieldset {
+    min-width: 0;
+    max-width: 100%;
     border: 1px solid $color-borde;
     padding: 16px;
     margin-top: 8px;

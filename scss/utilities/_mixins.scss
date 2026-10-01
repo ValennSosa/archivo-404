@@ -5,11 +5,22 @@
     outline-offset: $desplazamiento;
 }
 
-@mixin superficie-tarjeta {
+@mixin superficie-tarjeta($relleno: $espacio-base * 3) {
     background-color: $color-tarjeta;
     border: 1px solid $color-borde-suave;
-    padding: 24px;
+    padding: $relleno;
     transition: $transicion-tarjeta;
+}
+
+@mixin desde($ancho) {
+    @media (min-width: $ancho) {
+        @content;
+    }
+}
+
+@mixin animar-entrada($desplazamiento: 8px, $duracion: 0.6s) {
+    --entrada-y: #{$desplazamiento};
+    animation: aparecer-titulo $duracion ease both;
 }
 
 @mixin interaccion-tarjeta {

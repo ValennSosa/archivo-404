@@ -1,7 +1,9 @@
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .header {
     grid-area: header;
+    min-width: 0;
     background-color: $color-header;
     background-image: url("../img/header-bg.jpg");
     background-size: cover;
@@ -20,9 +22,19 @@
         height: auto;
     }
 
-    @media (min-width: $bp-desktop) {
+    @include desde($bp-tablet) {
         .navbar {
-            padding: 28px 32px;
+            padding: $espacio-md $espacio-lg;
+        }
+
+        img {
+            width: 148px;
+        }
+    }
+
+    @include desde($bp-desktop) {
+        .navbar {
+            padding: ($espacio-base * 3.5) $espacio-xl;
         }
 
         img {

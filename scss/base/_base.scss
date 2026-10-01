@@ -1,4 +1,5 @@
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 * {
     margin: 0;
@@ -12,6 +13,7 @@
         "header"
         "main"
         "footer";
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
     font-family: $font-texto;
@@ -25,10 +27,15 @@
 
 .main-content {
     grid-area: main;
-    padding: 24px 16px;
+    min-width: 0;
+    padding: $espacio-lg $espacio-md;
 
-    @media (min-width: $bp-desktop) {
-        padding: 40px 32px;
+    @include desde($bp-tablet) {
+        padding: $espacio-xl $espacio-lg;
+    }
+
+    @include desde($bp-desktop) {
+        padding: $espacio-2xl $espacio-xl;
     }
 }
 
@@ -44,13 +51,15 @@ li {
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 figure {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    max-width: 100%;
+    margin-top: $espacio-md;
+    margin-bottom: $espacio-md;
     border: 1px solid $color-borde-suave;
-    padding: 8px;
+    padding: $espacio-base;
     background-color: $color-superficie;
 }
 
