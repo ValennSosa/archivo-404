@@ -1,0 +1,70 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.btn-submit {
+    font-family: $font-titulo;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 12px 32px;
+    background-color: $color-acento;
+    color: $color-texto-claro;
+    border: 1px solid $color-acento-vivo;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: $transicion-boton;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-acento-vivo;
+        color: $color-blanco;
+    }
+
+    &:focus {
+        @include foco(3px, $color-acento-hover);
+    }
+
+    &:active {
+        background-color: $color-acento-oscuro;
+        transform: translateY(1px);
+    }
+}
+
+.category-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 8px 0 32px;
+}
+
+.btn-archive {
+    font-family: $font-titulo;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: $color-texto-claro;
+    background-color: $color-tarjeta;
+    border: 1px solid $color-acento;
+    border-radius: 0;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: $transicion-archivo;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-blanco;
+        background-color: $color-acento;
+        border-color: $color-acento-vivo;
+        text-decoration: none;
+    }
+
+    &:focus {
+        @include foco(3px, $color-acento-hover);
+        box-shadow: none;
+    }
+
+    &:active {
+        background-color: $color-acento-oscuro;
+        transform: translateY(1px);
+    }
+}

@@ -1,0 +1,13 @@
+// Punto de entrada. Los partials se cargan con @use; el CSS sale de la compilación.
+@use "utilities/variables" as *;
+@use "utilities/mixins" as *;
+@use "base/tipografia";
+@use "base/base";
+@use "layout/header";
+@use "layout/nav";
+@use "layout/footer";
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+@use "components/carousel";
+@use "components/accordion";

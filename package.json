@@ -1,0 +1,10 @@
+{
+  "name": "archivo-404",
+  "private": true,
+  "scripts": {
+    "build:css": "sass scss/main.scss css/style.css --style=expanded --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

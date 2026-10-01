@@ -1,0 +1,64 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700&display=swap");
+
+h1 {
+    font-family: $font-titulo;
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-weight: 400;
+    color: $color-acento-vivo;
+    letter-spacing: 3px;
+    line-height: 1.3;
+    border-bottom: 1px solid $color-borde;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: $font-titulo;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 400;
+    color: $color-texto-claro;
+    letter-spacing: 2px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    border-left: 3px solid $color-acento;
+    padding-left: 12px;
+
+    @media (min-width: $bp-desktop) {
+        margin-top: 48px;
+    }
+}
+
+h3 {
+    font-family: $font-titulo;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $color-acento-vivo;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 16px;
+    color: $color-texto-suave;
+}
+
+a {
+    color: $color-acento-vivo;
+    text-decoration: none;
+    transition: $transicion-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-acento-hover;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        @include foco(2px);
+    }
+}

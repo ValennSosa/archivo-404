@@ -1,0 +1,54 @@
+@use "../utilities/variables" as *;
+
+.contact-form {
+    margin-top: 24px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $color-texto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    background-color: $color-tarjeta;
+    border: 1px solid $color-borde;
+    color: $color-texto;
+    font-family: $font-texto;
+    font-size: 0.9rem;
+
+    &:focus {
+        border-color: $color-acento;
+        outline: none;
+    }
+}
+
+textarea {
+    min-height: 120px;
+}
+
+fieldset {
+    border: 1px solid $color-borde;
+    padding: 16px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    background-color: $color-tarjeta;
+}
+
+legend {
+    font-family: $font-titulo;
+    color: $color-acento-vivo;
+    padding: 0 8px;
+    font-size: 0.95rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+}

@@ -1,0 +1,31 @@
+@use "variables" as *;
+
+@mixin foco($desplazamiento: 2px, $color: $color-acento-vivo) {
+    outline: 2px solid $color;
+    outline-offset: $desplazamiento;
+}
+
+@mixin superficie-tarjeta {
+    background-color: $color-tarjeta;
+    border: 1px solid $color-borde-suave;
+    padding: 24px;
+    transition: $transicion-tarjeta;
+}
+
+@mixin interaccion-tarjeta {
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $color-acento-vivo;
+        background-color: $color-tarjeta-hover;
+        box-shadow: 0 0 12px $color-sombra-acento;
+    }
+
+    &:focus {
+        @include foco(3px);
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+}

@@ -1,0 +1,64 @@
+@use "../utilities/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    font-family: $font-texto;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $color-texto;
+    background-color: $color-fondo;
+    background-image: url("../img/bg-texture.jpg");
+    background-repeat: repeat;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 24px 16px;
+
+    @media (min-width: $bp-desktop) {
+        padding: 40px 32px;
+    }
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: $color-texto-suave;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: 1px solid $color-borde-suave;
+    padding: 8px;
+    background-color: $color-superficie;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    color: $color-figcaption;
+    font-style: italic;
+    padding-top: 8px;
+    border-top: 1px solid $color-borde-suave;
+    margin-top: 8px;
+}

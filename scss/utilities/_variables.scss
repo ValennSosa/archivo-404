@@ -1,0 +1,48 @@
+// Paleta, tipografía y valores repetidos de Archivo 404.
+// Primario #121212, secundario #1c1614, acento #8b0000, acento vivo #cc0000.
+
+$color-fondo: #121212;
+$color-header: #111111;
+$color-secundario: #1c1614;
+$color-acento: #8b0000;
+$color-acento-vivo: #cc0000;
+$color-acento-hover: #ff3333;
+$color-acento-oscuro: #5c0000;
+$color-texto: #d4d0c8;
+$color-texto-suave: #b8b4ac;
+$color-texto-claro: #e8e4dc;
+$color-blanco: #ffffff;
+$color-borde: #333333;
+$color-borde-suave: #2a2320;
+$color-tarjeta: #1a1715;
+$color-tarjeta-hover: #1f1b18;
+$color-superficie: #151210;
+$color-figcaption: #666666;
+$color-footer: #151010;
+$color-footer-texto: #555555;
+$color-carrusel: #0e0c0b;
+$color-acordeon-activo: #2a1210;
+$color-acordeon-hover: #3a1614;
+$color-navbar: rgba(10, 8, 8, 0.78);
+$color-menu-movil: rgba(12, 10, 10, 0.94);
+$color-toggler-hover: rgba(139, 0, 0, 0.4);
+$color-sombra-acento: rgba(139, 0, 0, 0.35);
+$degradado-caption: linear-gradient(transparent, rgba(12, 10, 9, 0.92) 42%);
+
+$font-texto: "Inter", sans-serif;
+$font-titulo: "Special Elite", cursive;
+
+$bp-navbar: 992px;
+$bp-desktop: 1024px;
+
+$transicion-color: color 0.25s ease;
+$transicion-nav: color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+$transicion-toggler: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+$transicion-tarjeta: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+$transicion-boton: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+$transicion-archivo: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+$transicion-indicador: opacity 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+$transicion-control: opacity 0.25s ease, background-color 0.25s ease;
+$transicion-social: opacity 0.25s ease, transform 0.25s ease;
+$transicion-acordeon: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+$transicion-marca: opacity 0.25s ease;

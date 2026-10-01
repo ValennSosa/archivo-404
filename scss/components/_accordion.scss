@@ -1,0 +1,62 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.archive-accordion {
+    margin-top: 8px;
+
+    .accordion-item {
+        background-color: $color-superficie;
+        border: 1px solid $color-borde-suave;
+        color: $color-texto;
+    }
+
+    h3 {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 1rem;
+    }
+
+    .accordion-button {
+        background-color: $color-secundario;
+        color: $color-texto-claro;
+        font-family: $font-titulo;
+        letter-spacing: 1px;
+        box-shadow: none;
+        transition: $transicion-acordeon;
+
+        &::after {
+            filter: invert(1);
+        }
+
+        &:not(.collapsed) {
+            background-color: $color-acordeon-activo;
+            color: $color-acento-vivo;
+            box-shadow: none;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color-acordeon-hover;
+            color: $color-acento-hover;
+            box-shadow: none;
+        }
+
+        &:focus {
+            @include foco(-2px);
+            border-color: $color-acento;
+        }
+
+        &:active {
+            background-color: $color-acento-oscuro;
+            color: $color-blanco;
+        }
+    }
+
+    .accordion-body {
+        background-color: $color-superficie;
+        color: $color-texto-suave;
+        padding: 16px 20px;
+    }
+}
