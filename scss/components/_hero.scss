@@ -61,26 +61,27 @@
 .hero-beam {
     position: absolute;
     z-index: 1;
-    left: 74%;
-    top: 34%;
-    width: 160vmax;
-    height: 160vmax;
-    margin-left: -80vmax;
-    margin-top: -80vmax;
+    left: 73%;
+    top: 36%;
+    width: 180vmax;
+    height: 180vmax;
+    margin-left: -90vmax;
+    margin-top: -90vmax;
     pointer-events: none;
     background: conic-gradient(
         from 0deg,
         transparent 0deg,
-        transparent 78deg,
-        rgba(255, 244, 210, 0.05) 86deg,
-        rgba(255, 236, 190, 0.42) 96deg,
-        rgba(255, 244, 210, 0.05) 106deg,
-        transparent 114deg,
+        transparent 62deg,
+        rgba(255, 248, 220, 0.12) 74deg,
+        rgba(255, 244, 200, 0.85) 90deg,
+        rgba(255, 248, 220, 0.12) 106deg,
+        transparent 118deg,
         transparent 360deg
     );
+    filter: blur(2px);
     mix-blend-mode: screen;
     transform-origin: center;
-    animation: giro-faro 14s linear infinite;
+    animation: giro-faro 9s linear infinite;
 }
 
 .hero-content {
