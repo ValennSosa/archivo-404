@@ -1,6 +1,8 @@
 {
   "name": "archivo-404",
+  "version": "1.0.0",
   "private": true,
+  "description": "Archivo 404, sitio de casos sin resolver. Sass compila los estilos.",
   "scripts": {
     "build:css": "sass scss/main.scss css/style.css --style=expanded --no-source-map"
   },
