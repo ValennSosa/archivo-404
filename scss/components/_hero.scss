@@ -122,12 +122,28 @@
     letter-spacing: 2px;
 }
 
+.page-home .hero {
+    padding-top: 148px;
+
+    @include desde($bp-tablet) {
+        padding-top: 176px;
+    }
+
+    @include desde($bp-desktop) {
+        padding-top: 220px;
+    }
+}
+
 .hero-lead {
-    max-width: 36rem;
+    max-width: 34rem;
     margin: 0 auto 28px;
-    color: $color-texto;
-    font-size: clamp(1.02rem, 2.2vw, 1.22rem);
-    line-height: 1.55;
+    color: #f4efe4;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+    line-height: 1.35;
+    letter-spacing: 0.01em;
 }
 
 .hero-actions {

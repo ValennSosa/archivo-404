@@ -1,7 +1,121 @@
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: $espacio-lg;
+    align-items: start;
+    width: min(100%, 1080px);
+    margin-inline: auto;
+
+    @include desde($bp-tablet) {
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: $espacio-xl;
+    }
+}
+
+.contact-intro {
+    h2 {
+        margin-top: 0;
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    figure {
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 100%;
+        max-height: 240px;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    @include desde($bp-desktop) {
+        img {
+            max-height: 320px;
+        }
+    }
+}
 
 .contact-form {
-    margin-top: 24px;
+    margin-top: 0;
+    background-color: $color-secundario;
+    border-left: 3px solid $color-acento;
+    padding: $espacio-lg;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    @include desde($bp-tablet) {
+        padding: $espacio-xl;
+    }
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0 $espacio-md;
+
+    @include desde($bp-tablet) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $espacio-md;
+
+    label {
+        margin-bottom: 6px;
+    }
+
+    input,
+    textarea {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+
+    @include desde($bp-tablet) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.choice,
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+
+    label {
+        margin: 0;
+        font-weight: 400;
+    }
+
+    input {
+        margin-right: 0;
+    }
+}
+
+.form-check {
+    margin-bottom: $espacio-lg;
+}
+
+.form-actions {
+    margin-top: $espacio-base;
+    margin-bottom: 0;
 }
 
 label {

@@ -6,7 +6,7 @@
     <title>Enviar una pista | Archivo 404</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="../css/style.css?v=5" />
+    <link rel="stylesheet" href="../css/style.css?v=7" />
 </head>
 <body class="page">
     <header class="header">
@@ -44,69 +44,78 @@
     <main class="main-content">
         <h1>Enviar Una Pista</h1>
 
-        <section class="intro-section" data-aos="fade-up">
-            <h2>¿Tenés información?</h2>
-            <p>
-                Si conocés datos sobre alguno de los casos del archivo, tenés
-                documentación que no aparece en nuestros expedientes o fuiste
-                testigo de algo que no encaja en ninguna explicación conocida,
-                podés escribirnos. El equipo de Archivo 404 revisa cada mensaje.
-            </p>
-            <figure>
-                <img src="../img/buzon-pistas.jpg" alt="Imágen con lupa observando documentos y cartas" />
-                <figcaption>Mesa de trabajo del equipo de investigación de Archivo 404.</figcaption>
-            </figure>
-        </section>
-
-        <section class="contact-form" data-aos="fade-up">
-            <h2>Formulario de contacto</h2>
-            <form action="#" method="post">
+        <div class="contact-layout">
+            <section class="intro-section contact-intro" data-aos="fade-up">
+                <h2>¿Tenés información?</h2>
                 <p>
-                    <label for="nombre">Nombre o alias:</label><br />
-                    <input type="text" id="nombre" name="nombre" placeholder="Podés usar un alias si preferís" required />
+                    Si conocés datos sobre alguno de los casos del archivo, tenés
+                    documentación que no aparece en nuestros expedientes o fuiste
+                    testigo de algo que no encaja en ninguna explicación conocida,
+                    podés escribirnos. El equipo de Archivo 404 revisa cada mensaje.
                 </p>
+                <figure>
+                    <img src="../img/buzon-pistas.jpg" alt="Imagen con lupa observando documentos y cartas" />
+                    <figcaption>Mesa de trabajo del equipo de investigación de Archivo 404.</figcaption>
+                </figure>
+            </section>
 
-                <p>
-                    <label for="email">Correo electrónico:</label><br />
-                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
-                </p>
+            <section class="contact-form" data-aos="fade-up">
+                <h2>Formulario de contacto</h2>
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="nombre">Nombre o alias</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Podés usar un alias si preferís" required />
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+                        </div>
+                    </div>
 
-                <p>
-                    <label for="caso-relacionado">Caso relacionado (opcional):</label><br />
-                    <input type="text" id="caso-relacionado" name="caso-relacionado" placeholder="Ej: Paso Dyatlov, Mary Celeste..." />
-                </p>
+                    <div class="form-field">
+                        <label for="caso-relacionado">Caso relacionado (opcional)</label>
+                        <input type="text" id="caso-relacionado" name="caso-relacionado" placeholder="Ej: Paso Dyatlov, Mary Celeste..." />
+                    </div>
 
-                <fieldset>
-                    <legend>Tipo de información:</legend>
+                    <fieldset>
+                        <legend>Tipo de información</legend>
+                        <div class="choice-grid">
+                            <div class="choice">
+                                <input type="radio" id="testimonio" name="tipo-info" value="testimonio" />
+                                <label for="testimonio">Testimonio propio</label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" id="documento" name="tipo-info" value="documento" />
+                                <label for="documento">Documento o fuente</label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" id="correccion" name="tipo-info" value="correccion" />
+                                <label for="correccion">Corrección de datos</label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" id="caso-nuevo" name="tipo-info" value="caso-nuevo" />
+                                <label for="caso-nuevo">Caso nuevo</label>
+                            </div>
+                        </div>
+                    </fieldset>
 
-                    <input type="radio" id="testimonio" name="tipo-info" value="testimonio" />
-                    <label for="testimonio">Testimonio propio</label><br />
+                    <div class="form-field">
+                        <label for="mensaje">Tu pista o testimonio</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Contanos qué sabés, viste o encontraste..." required></textarea>
+                    </div>
 
-                    <input type="radio" id="documento" name="tipo-info" value="documento" />
-                    <label for="documento">Documento o fuente</label><br />
+                    <div class="form-check">
+                        <input type="checkbox" id="anonimo" name="anonimo" />
+                        <label for="anonimo">Prefiero que mi identidad no se publique</label>
+                    </div>
 
-                    <input type="radio" id="correccion" name="tipo-info" value="correccion" />
-                    <label for="correccion">Corrección de datos</label><br />
-
-                    <input type="radio" id="caso-nuevo" name="tipo-info" value="caso-nuevo" />
-                    <label for="caso-nuevo">Caso nuevo</label>
-                </fieldset>
-
-                <p>
-                    <label for="mensaje">Tu pista o testimonio:</label><br />
-                    <textarea id="mensaje" name="mensaje" placeholder="Contanos qué sabés, viste o encontraste..." required></textarea>
-                </p>
-
-                <p>
-                    <input type="checkbox" id="anonimo" name="anonimo" />
-                    <label for="anonimo">Prefiero que mi identidad no se publique</label>
-                </p>
-
-                <p>
-                    <input type="submit" value="Enviar pista" class="btn-submit" />
-                </p>
-            </form>
-        </section>
+                    <p class="form-actions">
+                        <input type="submit" value="Enviar pista" class="btn-submit" />
+                    </p>
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer class="site-footer">
