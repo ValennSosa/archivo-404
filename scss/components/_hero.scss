@@ -123,6 +123,8 @@
 }
 
 .page-home .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
     padding-top: 148px;
 
     @include desde($bp-tablet) {
