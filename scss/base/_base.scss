@@ -16,6 +16,15 @@
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+
+    &:has(.hero) {
+        grid-template-areas:
+            "header"
+            "hero"
+            "main"
+            "footer";
+        grid-template-rows: auto auto 1fr auto;
+    }
     font-family: $font-texto;
     font-size: 1rem;
     line-height: 1.6;

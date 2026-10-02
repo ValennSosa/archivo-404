@@ -100,6 +100,12 @@ a:focus {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+}
+.page:has(.hero) {
+  grid-template-areas: "header" "hero" "main" "footer";
+  grid-template-rows: auto auto 1fr auto;
+}
+.page {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -206,6 +212,141 @@ figcaption {
   }
 }
 
+@keyframes deriva-hero {
+  from {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.18) translate3d(-2.5%, -1.5%, 0);
+  }
+}
+@keyframes barrido-hero {
+  from {
+    transform: translateY(-30vh);
+  }
+  to {
+    transform: translateY(110vh);
+  }
+}
+@keyframes pulso-senal {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+.hero {
+  grid-area: hero;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 78vh;
+  padding: 56px 20px 64px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .hero {
+    min-height: 84vh;
+    padding: 72px 32px 80px;
+  }
+}
+
+.hero-media,
+.hero-veil,
+.hero-scan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-media {
+  background-image: url("../img/faro-flannan.jpg");
+  background-size: cover;
+  background-position: center;
+  animation: deriva-hero 24s ease-in-out infinite alternate;
+}
+
+.hero-veil {
+  background: linear-gradient(to top, rgba(18, 18, 18, 0.94) 0%, rgba(18, 18, 18, 0.62) 42%, rgba(12, 8, 8, 0.4) 100%);
+}
+
+.hero-scan {
+  inset: auto 0 auto 0;
+  height: 22%;
+  background: linear-gradient(to bottom, transparent, rgba(204, 0, 0, 0.16), transparent);
+  animation: barrido-hero 8.5s linear infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 46rem);
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #e8e4dc;
+  font-family: "Special Elite", cursive;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.hero-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cc0000;
+  box-shadow: 0 0 10px #cc0000;
+  animation: pulso-senal 1.8s ease-in-out infinite;
+}
+
+.hero h1 {
+  margin: 0 0 18px;
+  padding: 0;
+  border: 0;
+  color: #e8e4dc;
+  font-size: clamp(2.6rem, 9vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: 2px;
+}
+
+.hero-lead {
+  max-width: 38rem;
+  margin: 0 auto 28px;
+  color: #d4d0c8;
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-btn-ghost {
+  background-color: transparent;
+}
+.hero-btn-ghost:hover, .hero-btn-ghost:focus, .hero-btn-ghost:active {
+  background-color: #8b0000;
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media,
+  .hero-scan,
+  .hero-kicker::before {
+    animation: none;
+  }
+}
 .navbar-brand {
   padding-top: 0;
   padding-bottom: 0;
