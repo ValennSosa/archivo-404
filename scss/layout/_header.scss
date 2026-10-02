@@ -11,6 +11,10 @@
     background-repeat: no-repeat;
     border-bottom: 2px solid $color-acento;
 
+    .page-home & {
+        background-image: none;
+    }
+
     .navbar {
         width: 100%;
         padding: 12px 16px;
