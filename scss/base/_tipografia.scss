@@ -1,8 +1,6 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Special+Elite&display=swap");
-
 @keyframes aparecer-titulo {
     from {
         opacity: 0;

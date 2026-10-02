@@ -71,3 +71,48 @@
         transition: $transicion-social;
     }
 }
+
+.to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    color: $color-texto-claro;
+    background-color: rgba(18, 14, 12, 0.92);
+    border: 1px solid $color-acento;
+    cursor: pointer;
+    transition: $transicion-boton;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+
+    &[hidden] {
+        display: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-blanco;
+        background-color: $color-acento;
+        border-color: $color-acento-vivo;
+    }
+
+    &:focus {
+        @include foco(3px);
+    }
+
+    @include desde($bp-tablet) {
+        right: 24px;
+        bottom: 24px;
+    }
+}
