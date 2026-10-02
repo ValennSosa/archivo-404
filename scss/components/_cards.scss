@@ -85,6 +85,15 @@
     }
 }
 
+.case-card,
+.theory-card,
+.file-card {
+    &:hover figure img,
+    &:focus-visible figure img {
+        transform: scale(1.06);
+    }
+}
+
 .file-card {
     @extend %tarjeta-base;
     @include interaccion-tarjeta;
@@ -99,5 +108,21 @@
 
     figure {
         margin-top: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .case-card,
+    .theory-card,
+    .file-card {
+        &:hover,
+        &:focus,
+        &:active {
+            transform: none;
+        }
+
+        figure img {
+            transition: none;
+        }
     }
 }

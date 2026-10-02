@@ -61,13 +61,26 @@ figure {
     border: 1px solid $color-borde-suave;
     padding: $espacio-base;
     background-color: $color-superficie;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.55s ease;
+    }
 }
 
 figcaption {
+    position: relative;
+    z-index: 1;
     font-size: 0.8rem;
     color: $color-figcaption;
     font-style: italic;
     padding-top: 8px;
     border-top: 1px solid $color-borde-suave;
     margin-top: 8px;
+    background-color: $color-superficie;
 }

@@ -16,6 +16,21 @@
     p {
         font-size: 0.8rem;
         color: $color-footer-texto;
+        margin-bottom: 0;
+    }
+
+    .footer-brand {
+        font-family: $font-titulo;
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+        color: $color-texto-claro;
+        text-transform: uppercase;
+    }
+
+    .footer-credit {
+        max-width: 42rem;
+        text-align: center;
+        line-height: 1.5;
     }
 }
 
@@ -23,6 +38,8 @@
     display: flex;
     list-style: none;
     gap: 16px;
+    margin-bottom: 0;
+    padding-left: 0;
 
     a {
         transition: $transicion-social;

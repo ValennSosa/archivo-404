@@ -147,15 +147,27 @@ figure {
   border: 1px solid #2a2320;
   padding: 8px;
   background-color: #151210;
+  overflow: hidden;
+}
+figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.55s ease;
 }
 
 figcaption {
+  position: relative;
+  z-index: 1;
   font-size: 0.8rem;
   color: #666666;
   font-style: italic;
   padding-top: 8px;
   border-top: 1px solid #2a2320;
   margin-top: 8px;
+  background-color: #151210;
 }
 
 .header {
@@ -286,12 +298,27 @@ figcaption {
 .site-footer p {
   font-size: 0.8rem;
   color: #555555;
+  margin-bottom: 0;
+}
+.site-footer .footer-brand {
+  font-family: "Special Elite", cursive;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  color: #e8e4dc;
+  text-transform: uppercase;
+}
+.site-footer .footer-credit {
+  max-width: 42rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .social-links {
   display: flex;
   list-style: none;
   gap: 16px;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 .social-links a {
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -462,17 +489,28 @@ figcaption {
   }
 }
 
+.case-card:hover figure img, .case-card:focus-visible figure img,
+.theory-card:hover figure img,
+.theory-card:focus-visible figure img,
+.file-card:hover figure img,
+.file-card:focus-visible figure img {
+  transform: scale(1.06);
+}
+
 .file-card:hover, .file-card:focus, .file-card:active {
   border-color: #cc0000;
   background-color: #1f1b18;
-  box-shadow: 0 0 12px rgba(139, 0, 0, 0.35);
+  box-shadow: 0 8px 22px rgba(139, 0, 0, 0.35);
+}
+.file-card:hover, .file-card:focus {
+  transform: translateY(-4px);
 }
 .file-card:focus {
   outline: 2px solid #cc0000;
   outline-offset: 3px;
 }
 .file-card:active {
-  transform: translateY(2px);
+  transform: translateY(0);
 }
 
 .case-card,
@@ -486,7 +524,12 @@ figcaption {
 .theory-card:active {
   border-color: #cc0000;
   background-color: #1f1b18;
-  box-shadow: 0 0 12px rgba(139, 0, 0, 0.35);
+  box-shadow: 0 8px 22px rgba(139, 0, 0, 0.35);
+}
+.case-card:hover, .case-card:focus,
+.theory-card:hover,
+.theory-card:focus {
+  transform: translateY(-4px);
 }
 .case-card:focus,
 .theory-card:focus {
@@ -495,13 +538,29 @@ figcaption {
 }
 .case-card:active,
 .theory-card:active {
-  transform: translateY(2px);
+  transform: translateY(0);
 }
 .case-card figure,
 .theory-card figure {
   margin-top: auto;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .case-card:hover, .case-card:focus, .case-card:active,
+  .theory-card:hover,
+  .theory-card:focus,
+  .theory-card:active,
+  .file-card:hover,
+  .file-card:focus,
+  .file-card:active {
+    transform: none;
+  }
+  .case-card figure img,
+  .theory-card figure img,
+  .file-card figure img {
+    transition: none;
+  }
+}
 .contact-form {
   margin-top: 24px;
 }

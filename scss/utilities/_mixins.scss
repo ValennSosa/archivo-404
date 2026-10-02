@@ -29,7 +29,12 @@
     &:active {
         border-color: $color-acento-vivo;
         background-color: $color-tarjeta-hover;
-        box-shadow: 0 0 12px $color-sombra-acento;
+        box-shadow: 0 8px 22px $color-sombra-acento;
+    }
+
+    &:hover,
+    &:focus {
+        transform: translateY(-4px);
     }
 
     &:focus {
@@ -37,6 +42,6 @@
     }
 
     &:active {
-        transform: translateY(2px);
+        transform: translateY(0);
     }
 }
