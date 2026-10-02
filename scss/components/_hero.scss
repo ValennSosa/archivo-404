@@ -1,23 +1,13 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-@keyframes deriva-hero {
+@keyframes giro-faro {
     from {
-        transform: scale(1.08) translate3d(0, 0, 0);
+        transform: rotate(0deg);
     }
 
     to {
-        transform: scale(1.18) translate3d(-2.5%, -1.5%, 0);
-    }
-}
-
-@keyframes barrido-hero {
-    from {
-        transform: translateY(-30vh);
-    }
-
-    to {
-        transform: translateY(110vh);
+        transform: rotate(360deg);
     }
 }
 
@@ -51,8 +41,7 @@
 }
 
 .hero-media,
-.hero-veil,
-.hero-scan {
+.hero-veil {
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -61,20 +50,37 @@
 .hero-media {
     background-image: url("../img/faro-flannan.jpg");
     background-size: cover;
-    background-position: center;
-    animation: deriva-hero 24s ease-in-out infinite alternate;
+    background-position: 68% 40%;
 }
 
 .hero-veil {
     background:
-        linear-gradient(to top, rgba(18, 18, 18, 0.94) 0%, rgba(18, 18, 18, 0.62) 42%, rgba(12, 8, 8, 0.4) 100%);
+        linear-gradient(to top, rgba(8, 8, 10, 0.82) 0%, rgba(8, 10, 16, 0.45) 48%, rgba(6, 8, 14, 0.55) 100%);
 }
 
-.hero-scan {
-    inset: auto 0 auto 0;
-    height: 22%;
-    background: linear-gradient(to bottom, transparent, rgba(204, 0, 0, 0.16), transparent);
-    animation: barrido-hero 8.5s linear infinite;
+.hero-beam {
+    position: absolute;
+    z-index: 1;
+    left: 74%;
+    top: 34%;
+    width: 160vmax;
+    height: 160vmax;
+    margin-left: -80vmax;
+    margin-top: -80vmax;
+    pointer-events: none;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 78deg,
+        rgba(255, 244, 210, 0.05) 86deg,
+        rgba(255, 236, 190, 0.42) 96deg,
+        rgba(255, 244, 210, 0.05) 106deg,
+        transparent 114deg,
+        transparent 360deg
+    );
+    mix-blend-mode: screen;
+    transform-origin: center;
+    animation: giro-faro 14s linear infinite;
 }
 
 .hero-content {
@@ -141,8 +147,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-media,
-    .hero-scan,
+    .hero-beam,
     .hero-kicker::before {
         animation: none;
     }
