@@ -360,10 +360,24 @@ figcaption {
 }
 
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
+  width: min(100%, 28rem);
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.hero-actions .btn-archive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  text-align: center;
 }
 
 .hero-btn-ghost {
@@ -1035,6 +1049,28 @@ figcaption {
   .archive .file-card:has(figure) p {
     grid-column: 1;
   }
+}
+
+.page-home .intro-section > h2,
+.page-home .gallery-section > h2 {
+  margin-top: 0;
+  border-left: 0;
+  padding-left: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #8b0000;
+  letter-spacing: 1px;
+}
+
+.page-home .intro-section p {
+  max-width: 40rem;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #d9d1c4;
+}
+
+.page-home .gallery-section {
+  margin-top: 24px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -149,10 +149,24 @@
 }
 
 .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 12px;
+    width: min(100%, 28rem);
+    margin-inline: auto;
+
+    @include desde($bp-tablet) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .btn-archive {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+        text-align: center;
+    }
 }
 
 .hero-btn-ghost {

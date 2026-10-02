@@ -325,6 +325,28 @@
     }
 }
 
+.page-home .intro-section > h2,
+.page-home .gallery-section > h2 {
+    margin-top: 0;
+    border-left: 0;
+    padding-left: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-acento;
+    letter-spacing: 1px;
+}
+
+.page-home .intro-section p {
+    max-width: 40rem;
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #d9d1c4;
+}
+
+.page-home .gallery-section {
+    margin-top: $espacio-lg;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .archive .case-card figure img,
     .archive .theory-card figure img,
