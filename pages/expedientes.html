@@ -6,7 +6,7 @@
     <title>Expedientes detallados | Archivo 404</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="../css/style.css?v=6" />
+    <link rel="stylesheet" href="../css/style.css?v=9" />
 </head>
 <body class="page">
     <header class="header">
@@ -41,7 +41,8 @@
         </nav>
     </header>
 
-    <main class="main-content">
+    <main class="main-content archive">
+        <p class="archive-kicker">Clasificado</p>
         <h1>Expedientes Detallados</h1>
 
         <section class="intro-section" data-aos="fade-up">
@@ -53,9 +54,16 @@
             </p>
         </section>
 
+        <nav class="archive-index" aria-label="Expedientes">
+            <a class="btn btn-archive" href="#dyatlov">001 · Paso Dyatlov</a>
+            <a class="btn btn-archive" href="#somerton">002 · Hombre de Somerton</a>
+            <a class="btn btn-archive" href="#mary-celeste">003 · Mary Celeste</a>
+        </nav>
+
         <!-- EXPEDIENTE 001 -->
-        <section class="case-file">
+        <section class="case-file" id="dyatlov">
             <h2>Expediente N.º 001 — El incidente del Paso Dyatlov</h2>
+            <p class="file-status">1959 · Urales · Reabierto en 2019</p>
 
             <article class="file-card" data-aos="fade-up" tabindex="0">
                 <h3>Datos del caso</h3>
@@ -112,11 +120,13 @@
                     cerraron la zona a excursionistas durante tres años?
                 </p>
             </article>
+            <p class="file-next"><a class="card-link" href="./teorias.html#teoria-dyatlov">Ver las teorías</a></p>
         </section>
 
         <!-- EXPEDIENTE 002 -->
-        <section class="case-file">
+        <section class="case-file" id="somerton">
             <h2>Expediente N.º 002 — El hombre de Somerton (Tamám Shud)</h2>
+            <p class="file-status">1948 · Adelaida · Identidad parcial</p>
 
             <article class="file-card" data-aos="fade-up" tabindex="0">
                 <h3>Datos del caso</h3>
@@ -176,11 +186,13 @@
                     código? ¿Por qué llevaba un libro de poesía persa?
                 </p>
             </article>
+            <p class="file-next"><a class="card-link" href="./teorias.html#teoria-somerton">Ver las teorías</a></p>
         </section>
 
         <!-- EXPEDIENTE 003 -->
-        <section class="case-file">
+        <section class="case-file" id="mary-celeste">
             <h2>Expediente N.º 003 — El Mary Celeste</h2>
+            <p class="file-status">1872 · Atlántico · Sin resolución</p>
 
             <article class="file-card" data-aos="fade-up" tabindex="0">
                 <h3>Datos del caso</h3>
@@ -223,6 +235,7 @@
                     rutas marítimas más transitadas del siglo XIX?
                 </p>
             </article>
+            <p class="file-next"><a class="card-link" href="./teorias.html#teoria-mary">Ver las teorías</a></p>
         </section>
     </main>
 

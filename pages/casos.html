@@ -6,7 +6,7 @@
     <title>Casos sin resolver | Archivo 404</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="../css/style.css?v=6" />
+    <link rel="stylesheet" href="../css/style.css?v=9" />
 </head>
 <body class="page">
     <header class="header">
@@ -41,7 +41,8 @@
         </nav>
     </header>
 
-    <main class="main-content">
+    <main class="main-content archive">
+        <p class="archive-kicker">Catálogo</p>
         <h1>Casos Sin Resolver</h1>
 
         <section class="intro-section" data-aos="fade-up">
@@ -52,6 +53,13 @@
                 <a href="./expedientes.html">Expedientes</a>.
             </p>
         </section>
+
+        <nav class="archive-index" aria-label="Categorías de casos">
+            <a class="btn btn-archive" href="#desapariciones">Desapariciones</a>
+            <a class="btn btn-archive" href="#senales">Señales y comunicaciones</a>
+            <a class="btn btn-archive" href="#objetos">Objetos y documentos</a>
+            <a class="btn btn-archive" href="#muertes">Muertes inexplicables</a>
+        </nav>
 
         <section class="gallery-section" data-aos="fade-up" aria-labelledby="titulo-galeria-casos">
             <h2 id="titulo-galeria-casos">Galería de casos</h2>
@@ -109,19 +117,14 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
-            <div class="category-actions" role="group" aria-label="Categorías de casos">
-                <a class="btn btn-archive" href="#desapariciones">Desapariciones</a>
-                <a class="btn btn-archive" href="#senales">Señales y comunicaciones</a>
-                <a class="btn btn-archive" href="#objetos">Objetos y documentos</a>
-                <a class="btn btn-archive" href="#muertes">Muertes inexplicables</a>
-            </div>
         </section>
 
         <!-- CATEGORÍA 1: DESAPARICIONES -->
-        <section class="case-category" id="desapariciones">
+        <section class="case-category catalog" id="desapariciones">
             <h2>Desapariciones</h2>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1872 · Atlántico</p>
                 <h3>El Mary Celeste</h3>
                 <p>
                     En diciembre de 1872, el bergantín Mary Celeste fue encontrado a
@@ -136,9 +139,11 @@
                     <img src="../img/mary-celeste-grabado.jpg" alt="Grabado del siglo XIX del bergantín Mary Celeste navegando en mar abierto" />
                     <figcaption>Ilustración del Mary Celeste publicada en prensa tras el hallazgo de 1872.</figcaption>
                 </figure>
+                <a class="card-link" href="./expedientes.html#mary-celeste">Abrir expediente</a>
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1590 · Isla de Roanoke</p>
                 <h3>La colonia perdida de Roanoke</h3>
                 <p>
                     En 1587, un grupo de 115 colonos ingleses se estableció en la
@@ -156,6 +161,7 @@
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1900 · Escocia</p>
                 <h3>El faro de las islas Flannan</h3>
                 <p>
                     Diciembre de 1900, Escocia. El barco de relevo llega al faro de
@@ -173,10 +179,11 @@
         </section>
 
         <!-- CATEGORÍA 2: SEÑALES Y COMUNICACIONES -->
-        <section class="case-category" id="senales">
+        <section class="case-category catalog" id="senales">
             <h2>Señales y comunicaciones</h2>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1977 · Ohio</p>
                 <h3>La Señal Wow!</h3>
                 <p>
                     Una ráfaga de radio de 72 segundos, captada en 1977 desde la
@@ -191,6 +198,7 @@
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">Guerra Fría · Onda corta</p>
                 <h3>Las estaciones de números</h3>
                 <p>
                     Desde la Guerra Fría, radioaficionados de todo el mundo captan
@@ -207,6 +215,7 @@
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1948 · Australia</p>
                 <h3>El caso Taman Shud y su código</h3>
                 <p>
                     Un trozo de papel con las palabras "Tamám Shud" (que significa
@@ -221,14 +230,16 @@
                     <img src="../img/taman-shud.jpg" alt="Fotografía del pequeño trozo de papel impreso con las palabras Tamam Shud encontrado en el bolsillo del hombre de Somerton" />
                     <figcaption>El fragmento de papel encontrado oculto en la ropa del hombre de Somerton.</figcaption>
                 </figure>
+                <a class="card-link" href="./expedientes.html#somerton">Abrir expediente</a>
             </article>
         </section>
 
         <!-- CATEGORÍA 3: OBJETOS Y DOCUMENTOS -->
-        <section class="case-category" id="objetos">
+        <section class="case-category catalog" id="objetos">
             <h2>Objetos y documentos inexplicables</h2>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">Siglo XV · Sin idioma</p>
                 <h3>El manuscrito Voynich</h3>
                 <p>
                     240 páginas escritas en un alfabeto que no corresponde a ningún
@@ -242,9 +253,11 @@
                     <img src="../img/voynich-texto.jpg" alt="Doble página del manuscrito Voynich con texto en escritura indescifrada" />
                     <figcaption>Páginas con diagramas astronómicos del manuscrito Voynich, Biblioteca Beinecke, Yale.</figcaption>
                 </figure>
+                <a class="card-link" href="./teorias.html#teoria-voynich">Ver teorías</a>
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">Siglo I a. C. · Grecia</p>
                 <h3>El Mecanismo de Anticitera</h3>
                 <p>
                     Rescatado en 1901 de un naufragio romano frente a la isla griega
@@ -261,6 +274,7 @@
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1513 · Estambul</p>
                 <h3>Los mapas de Piri Reis</h3>
                 <p>
                     Un mapa dibujado en 1513 por el almirante otomano Piri Reis
@@ -279,10 +293,11 @@
         </section>
 
         <!-- CATEGORÍA 4: MUERTES INEXPLICABLES -->
-        <section class="case-category" id="muertes">
+        <section class="case-category catalog" id="muertes">
             <h2>Muertes inexplicables</h2>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1959 · Urales</p>
                 <h3>El incidente del Paso Dyatlov</h3>
                 <p>
                     Nueve excursionistas mueren en los Urales en febrero de 1959
@@ -296,9 +311,11 @@
                     <img src="../img/paso-dyatlov-grupo.jpg" alt="Fotografía en blanco y negro de la tienda de campaña del grupo Dyatlov encontrada semiderrumbada y cubierta de nieve en los montes Urales" />
                     <figcaption>Última fotografía conocida del grupo completo, tomada durante los primeros días de la marcha.</figcaption>
                 </figure>
+                <a class="card-link" href="./expedientes.html#dyatlov">Abrir expediente</a>
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">1948 · Adelaida</p>
                 <h3>El hombre de Somerton</h3>
                 <p>
                     1 de diciembre de 1948, playa de Somerton, Adelaida, Australia.
@@ -314,9 +331,11 @@
                     <img src="../img/hombre-somerton.jpg" alt="Fotografía post mortem del hombre de Somerton, rostro de un hombre de mediana edad con rasgos europeos y cabello peinado hacia atrás" />
                     <figcaption>Imagen forense del hombre de Somerton, difundida por la policía australiana en 1949.</figcaption>
                 </figure>
+                <a class="card-link" href="./expedientes.html#somerton">Abrir expediente</a>
             </article>
 
             <article class="case-card" data-aos="fade-up" tabindex="0">
+                <p class="card-meta">2013 · Los Ángeles</p>
                 <h3>La muerte de Elisa Lam</h3>
                 <p>
                     En febrero de 2013, el cuerpo de la turista canadiense Elisa Lam

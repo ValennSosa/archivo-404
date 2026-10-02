@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;600;700&family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Special+Elite&display=swap");
 @keyframes aparecer-titulo {
   from {
     opacity: 0;
@@ -346,15 +346,17 @@ figcaption {
 }
 
 .hero-lead {
-  max-width: 34rem;
-  margin: 0 auto 28px;
-  color: #f4efe4;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.35rem, 2.8vw, 1.8rem);
-  line-height: 1.35;
-  letter-spacing: 0.01em;
+  max-width: 36rem;
+  margin: 0 auto 32px;
+  color: #efe8dc;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+  line-height: 1.7;
+  letter-spacing: 0.012em;
+  text-wrap: balance;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.65);
 }
 
 .hero-actions {
@@ -730,6 +732,316 @@ figcaption {
   .case-card figure img,
   .theory-card figure img,
   .file-card figure img {
+    transition: none;
+  }
+}
+.archive {
+  width: min(100%, 1120px);
+  margin-inline: auto;
+}
+.archive .intro-section {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #2a2320;
+  padding: 0 0 24px;
+  margin-bottom: 24px;
+}
+.archive .case-category > h2,
+.archive .case-file > h2,
+.archive .section-heading h2 {
+  margin-top: 0;
+  border-left: 0;
+  padding-left: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #8b0000;
+  letter-spacing: 1px;
+}
+.archive .section-heading {
+  border-bottom: 1px solid #8b0000;
+  margin-bottom: 16px;
+}
+.archive .section-heading h2 {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.archive figcaption {
+  color: #9a9186;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-style: italic;
+}
+
+.archive-kicker {
+  margin: 0 0 8px;
+  color: #cc0000;
+  font-family: "Special Elite", cursive;
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.archive-index {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin: 0 0 32px;
+}
+@media (min-width: 768px) {
+  .archive-index {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+.archive-index .btn-archive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 14px;
+  text-align: center;
+  line-height: 1.3;
+  white-space: normal;
+}
+
+.card-meta,
+.file-status,
+.theory-status {
+  font-family: "Special Elite", cursive;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #cc0000;
+}
+
+.card-meta,
+.file-status {
+  margin-bottom: 8px;
+}
+
+.file-status,
+.file-next {
+  grid-column: 1/-1;
+}
+
+.file-next {
+  margin: 16px 0 0;
+}
+
+.theory-status {
+  align-self: flex-start;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  border: 1px solid #8b0000;
+  color: #e8e4dc;
+}
+
+.theory-status.is-firm {
+  border-color: #8a7340;
+  color: #e6d3a3;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 4px;
+  font-family: "Special Elite", cursive;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #e8e4dc;
+}
+.card-link:hover, .card-link:focus, .card-link:active {
+  color: #ff3333;
+  text-decoration: none;
+}
+
+.section-heading {
+  grid-column: 1/-1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+}
+.section-heading h2 {
+  flex: 1 1 16rem;
+}
+.section-heading .card-link {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+.archive .case-card,
+.archive .theory-card {
+  padding: 0 0 24px;
+  overflow: hidden;
+}
+.archive .case-card figure,
+.archive .theory-card figure {
+  order: -1;
+  margin: 0 0 16px;
+  border: 0;
+  border-bottom: 1px solid #2a2320;
+  padding: 0;
+  background-color: #0c0a09;
+}
+.archive .case-card figcaption,
+.archive .theory-card figcaption {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.archive .case-card .card-meta,
+.archive .case-card h3,
+.archive .case-card p,
+.archive .case-card .card-link,
+.archive .theory-card .card-meta,
+.archive .theory-card h3,
+.archive .theory-card p,
+.archive .theory-card .card-link {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.archive .case-card h3,
+.archive .theory-card h3 {
+  margin-top: 0;
+}
+.archive .case-card p:not(.card-meta):not(.theory-status),
+.archive .theory-card p:not(.card-meta):not(.theory-status) {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #d9d1c4;
+}
+.archive .case-card figure img,
+.archive .theory-card figure img {
+  filter: saturate(0.7) contrast(1.05);
+}
+.archive .case-card:hover figure img, .archive .case-card:focus-visible figure img,
+.archive .theory-card:hover figure img,
+.archive .theory-card:focus-visible figure img {
+  filter: saturate(0.95) contrast(1.05);
+}
+
+@media (min-width: 768px) {
+  .archive .case-category {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .archive .catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 768px) {
+  .archive .catalog .case-card:last-child:nth-child(even) {
+    grid-column: 1/-1;
+  }
+  .archive .catalog .case-card:last-child:nth-child(even) p:not(.card-meta) {
+    max-width: 68ch;
+  }
+  .archive .catalog .case-card:last-child:nth-child(even) figure img {
+    max-height: 380px;
+    aspect-ratio: 21/9;
+  }
+}
+
+@media (min-width: 768px) {
+  .archive .case-category .theory-card:last-child:nth-child(even) {
+    grid-column: 1/-1;
+  }
+  .archive .case-category .theory-card:last-child:nth-child(even) p:not(.theory-status) {
+    max-width: 68ch;
+  }
+}
+
+.archive .case-file {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  border: 1px solid #2a2320;
+  background-color: rgba(16, 13, 12, 0.88);
+  padding: 24px 16px 16px;
+  margin-bottom: 32px;
+}
+@media (min-width: 768px) {
+  .archive .case-file {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 32px 24px 24px;
+  }
+}
+.archive .case-file > h2 {
+  margin-bottom: 8px;
+}
+
+.archive .file-card {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid #2a2320;
+  box-shadow: none;
+  padding: 24px 0 0;
+  margin-top: 16px;
+}
+.archive .file-card:first-of-type {
+  border-top: 0;
+  margin-top: 8px;
+  padding-top: 0;
+}
+.archive .file-card:hover, .archive .file-card:focus, .archive .file-card:active {
+  transform: none;
+  background-color: transparent;
+  border-color: #2a2320;
+  box-shadow: none;
+}
+.archive .file-card h3 {
+  margin-top: 0;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.archive .file-card p {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #d9d1c4;
+}
+.archive .file-card figure {
+  order: -1;
+  margin-top: 0;
+}
+.archive .file-card figure img {
+  filter: saturate(0.7) contrast(1.05);
+}
+@media (min-width: 768px) {
+  .archive .file-card:has(figure) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.8fr);
+    column-gap: 24px;
+    align-items: start;
+  }
+  .archive .file-card:has(figure) figure {
+    order: 0;
+    grid-column: 2;
+    grid-row: 1/span 6;
+    margin: 0;
+  }
+  .archive .file-card:has(figure) h3,
+  .archive .file-card:has(figure) p {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive .case-card figure img,
+  .archive .theory-card figure img,
+  .archive .file-card figure img {
+    filter: none;
     transition: none;
   }
 }
