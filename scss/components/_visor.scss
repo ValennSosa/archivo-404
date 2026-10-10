@@ -16,11 +16,22 @@
     }
 }
 
-dialog.visor {
+.visor {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.88);
+
+    &[hidden] {
+        display: none;
+    }
+}
+
+.visor-panel {
+    position: relative;
     width: fit-content;
     max-width: min(96vw, 1200px);
     max-height: 94vh;
@@ -31,10 +42,6 @@ dialog.visor {
     background-color: #100e0c;
     color: $color-texto-claro;
     overflow: auto;
-
-    &::backdrop {
-        background-color: rgba(0, 0, 0, 0.88);
-    }
 
     img {
         display: block;

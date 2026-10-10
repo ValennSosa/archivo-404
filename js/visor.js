@@ -2,9 +2,15 @@
     var fotos = document.querySelectorAll("main figure img, .carousel-item img");
     if (!fotos.length) return;
 
-    var dialogo = document.createElement("dialog");
-    dialogo.className = "visor";
-    dialogo.setAttribute("aria-label", "Imagen completa");
+    var capa = document.createElement("div");
+    capa.className = "visor";
+    capa.hidden = true;
+
+    var panel = document.createElement("div");
+    panel.className = "visor-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-modal", "true");
+    panel.setAttribute("aria-label", "Imagen completa");
 
     var cerrar = document.createElement("button");
     cerrar.type = "button";
@@ -19,33 +25,12 @@
     pie.className = "visor-pie";
     pie.hidden = true;
 
-    dialogo.append(cerrar, grande, pie);
-    document.body.appendChild(dialogo);
+    panel.append(cerrar, grande, pie);
+    capa.appendChild(panel);
+    document.body.appendChild(capa);
 
-    var scrollGuardado = 0;
-
-    function congelarScroll() {
-        scrollGuardado = window.scrollY || document.documentElement.scrollTop || 0;
-        document.body.style.position = "fixed";
-        document.body.style.top = "-" + scrollGuardado + "px";
-        document.body.style.left = "0";
-        document.body.style.right = "0";
-        document.body.style.width = "100%";
-    }
-
-    function soltarScroll() {
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.left = "";
-        document.body.style.right = "";
-        document.body.style.width = "";
-        window.scrollTo(0, scrollGuardado);
-        requestAnimationFrame(function () {
-            window.scrollTo(0, scrollGuardado);
-        });
-    }
-
-    dialogo.addEventListener("close", soltarScroll);
+    var origen = null;
+    var carruselPausado = null;
 
     function textoPie(boton) {
         var figura = boton.closest("figure");
@@ -61,6 +46,46 @@
         return "";
     }
 
+    function abrir(boton, img) {
+        if (!capa.hidden) return;
+        origen = boton;
+        grande.src = img.currentSrc || img.src;
+        grande.alt = img.alt || "";
+        pie.textContent = textoPie(boton);
+        pie.hidden = pie.textContent === "";
+
+        var carrusel = boton.closest(".carousel");
+        if (carrusel && window.bootstrap) {
+            carruselPausado = bootstrap.Carousel.getOrCreateInstance(carrusel);
+            carruselPausado.pause();
+        }
+
+        capa.hidden = false;
+        cerrar.focus({ preventScroll: true });
+        document.addEventListener("keydown", alTeclado);
+    }
+
+    function cerrarVisor() {
+        if (capa.hidden) return;
+        capa.hidden = true;
+        document.removeEventListener("keydown", alTeclado);
+        if (carruselPausado) {
+            carruselPausado.cycle();
+            carruselPausado = null;
+        }
+        if (origen) {
+            origen.focus({ preventScroll: true });
+            origen = null;
+        }
+    }
+
+    function alTeclado(evento) {
+        if (evento.key === "Escape") {
+            evento.preventDefault();
+            cerrarVisor();
+        }
+    }
+
     fotos.forEach(function (img) {
         if (img.closest("a")) return;
 
@@ -74,32 +99,13 @@
         boton.addEventListener("click", function (evento) {
             evento.preventDefault();
             evento.stopPropagation();
-            grande.src = img.currentSrc || img.src;
-            grande.alt = img.alt || "";
-            pie.textContent = textoPie(boton);
-            pie.hidden = pie.textContent === "";
-
-            var carrusel = boton.closest(".carousel");
-            if (carrusel && window.bootstrap) {
-                var instancia = bootstrap.Carousel.getOrCreateInstance(carrusel);
-                instancia.pause();
-                dialogo.addEventListener("close", function reanudar() {
-                    dialogo.removeEventListener("close", reanudar);
-                    instancia.cycle();
-                });
-            }
-
-            if (dialogo.open) return;
-            congelarScroll();
-            dialogo.showModal();
+            abrir(boton, img);
         });
     });
 
-    cerrar.addEventListener("click", function () {
-        dialogo.close();
-    });
+    cerrar.addEventListener("click", cerrarVisor);
 
-    dialogo.addEventListener("click", function (evento) {
-        if (evento.target === dialogo) dialogo.close();
+    capa.addEventListener("click", function (evento) {
+        if (evento.target === capa) cerrarVisor();
     });
 })();
