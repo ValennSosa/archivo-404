@@ -1480,23 +1480,26 @@ input[type=checkbox] {
   outline-offset: 2px;
 }
 
-.visor {
-  position: relative;
+dialog.visor {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: fit-content;
   max-width: min(96vw, 1200px);
   max-height: 94vh;
   max-height: 94dvh;
-  margin: auto;
+  margin: 0;
   padding: 48px 16px 14px;
   border: 1px solid #8b0000;
   background-color: #100e0c;
   color: #e8e4dc;
   overflow: auto;
 }
-.visor::backdrop {
+dialog.visor::backdrop {
   background-color: rgba(0, 0, 0, 0.88);
 }
-.visor img {
+dialog.visor img {
   display: block;
   width: auto;
   max-width: min(92vw, 1160px);

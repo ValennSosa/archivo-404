@@ -16,13 +16,16 @@
     }
 }
 
-.visor {
-    position: relative;
+dialog.visor {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: fit-content;
     max-width: min(96vw, 1200px);
     max-height: 94vh;
     max-height: 94dvh;
-    margin: auto;
+    margin: 0;
     padding: 48px 16px 14px;
     border: 1px solid $color-acento;
     background-color: #100e0c;

@@ -22,6 +22,31 @@
     dialogo.append(cerrar, grande, pie);
     document.body.appendChild(dialogo);
 
+    var scrollGuardado = 0;
+
+    function congelarScroll() {
+        scrollGuardado = window.scrollY || document.documentElement.scrollTop || 0;
+        document.body.style.position = "fixed";
+        document.body.style.top = "-" + scrollGuardado + "px";
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+    }
+
+    function soltarScroll() {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollGuardado);
+        requestAnimationFrame(function () {
+            window.scrollTo(0, scrollGuardado);
+        });
+    }
+
+    dialogo.addEventListener("close", soltarScroll);
+
     function textoPie(boton) {
         var figura = boton.closest("figure");
         if (figura) {
@@ -64,6 +89,8 @@
                 });
             }
 
+            if (dialogo.open) return;
+            congelarScroll();
             dialogo.showModal();
         });
     });
