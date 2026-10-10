@@ -141,6 +141,11 @@ textarea {
         border-color: $color-acento;
         outline: none;
     }
+
+    &::placeholder {
+        color: $color-texto-suave;
+        opacity: 1;
+    }
 }
 
 textarea {
@@ -159,7 +164,7 @@ fieldset {
 
 legend {
     font-family: $font-titulo;
-    color: $color-acento-vivo;
+    color: $color-acento-texto;
     padding: 0 8px;
     font-size: 0.95rem;
 }

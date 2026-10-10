@@ -120,6 +120,15 @@
     font-size: clamp(2.6rem, 9vw, 5.4rem);
     line-height: 0.95;
     letter-spacing: 2px;
+
+    span {
+        display: block;
+        margin-top: 14px;
+        color: #efe8dc;
+        font-size: clamp(0.72rem, 1.4vw, 0.95rem);
+        letter-spacing: 0.22em;
+        line-height: 1.4;
+    }
 }
 
 .page-home .hero {

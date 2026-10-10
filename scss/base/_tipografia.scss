@@ -17,7 +17,7 @@ h1 {
     font-family: $font-titulo;
     font-size: clamp(1.5rem, 4vw, 2.4rem);
     font-weight: 400;
-    color: $color-acento-vivo;
+    color: $color-acento-texto;
     letter-spacing: 1px;
     line-height: 1.3;
     border-bottom: 1px solid $color-borde;
@@ -57,7 +57,7 @@ h3 {
     font-family: $font-titulo;
     font-size: 1.2rem;
     font-weight: 400;
-    color: $color-acento-vivo;
+    color: $color-acento-texto;
     letter-spacing: 1px;
     margin-bottom: 8px;
     overflow-wrap: break-word;
@@ -70,7 +70,7 @@ p {
 }
 
 a {
-    color: $color-acento-vivo;
+    color: $color-acento-texto;
     text-decoration: none;
     transition: $transicion-color;
 

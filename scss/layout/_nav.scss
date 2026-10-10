@@ -34,7 +34,7 @@
         transition: $transicion-nav;
 
         &:hover {
-            color: $color-acento-vivo;
+            color: $color-acento-texto;
             text-decoration: none;
         }
 
@@ -51,7 +51,7 @@
         }
 
         &.active {
-            color: $color-acento-vivo;
+            color: $color-acento-texto;
             box-shadow: inset 0 -2px 0 $color-acento;
         }
     }
