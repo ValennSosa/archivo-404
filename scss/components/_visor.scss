@@ -1,0 +1,86 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.visor-disparador {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: zoom-in;
+
+    &:focus-visible {
+        @include foco(2px);
+    }
+}
+
+.visor {
+    position: relative;
+    width: fit-content;
+    max-width: min(96vw, 1200px);
+    max-height: 94vh;
+    max-height: 94dvh;
+    margin: auto;
+    padding: 48px 16px 14px;
+    border: 1px solid $color-acento;
+    background-color: #100e0c;
+    color: $color-texto-claro;
+    overflow: auto;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.88);
+    }
+
+    img {
+        display: block;
+        width: auto;
+        max-width: min(92vw, 1160px);
+        height: auto;
+        max-height: calc(94vh - 110px);
+        max-height: calc(94dvh - 110px);
+        margin: 0 auto;
+        object-fit: contain;
+        aspect-ratio: auto;
+    }
+}
+
+.visor-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid $color-acento;
+    background-color: rgba(18, 14, 12, 0.92);
+    color: $color-texto-claro;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-blanco;
+        background-color: $color-acento;
+        border-color: $color-acento-vivo;
+    }
+
+    &:focus-visible {
+        @include foco(2px);
+    }
+}
+
+.visor-pie {
+    max-width: 46rem;
+    margin: 12px auto 0;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: $color-texto-suave;
+}
