@@ -4,7 +4,7 @@
   "private": true,
   "description": "Archivo 404, sitio de casos sin resolver. Sass compila los estilos.",
   "scripts": {
-    "build:css": "sass scss/main.scss css/style.css --style=expanded --no-source-map"
+    "build:css": "sass scss/main.scss styles/style.css --style=expanded --no-source-map"
   },
   "devDependencies": {
     "sass": "^1.80.0"

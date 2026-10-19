@@ -6,6 +6,12 @@ Autora: Valentina Sosa.
 
 ## Sitio publicado
 
+El sitio de la entrega final está en Vercel:
+
+https://archivo-404.vercel.app
+
+También sigue disponible en GitHub Pages:
+
 https://ValennSosa.github.io/archivo-404/
 
 ## Páginas
@@ -21,7 +27,7 @@ Las cinco páginas están terminadas, comparten la misma navegación y el mismo 
 ## Tecnologías
 
 - HTML5
-- SCSS compilado a `css/style.css`, mobile first, con cortes en 768 px y 1024 px
+- SCSS compilado a `styles/style.css`, mobile first, con cortes en 768 px y 1024 px
 - Bootstrap 5.3 por CDN: navbar, carrusel y acordeón
 - AOS para las entradas al hacer scroll
 - Paleta oscura del archivo, con acento rojo
@@ -37,4 +43,11 @@ npm install
 npm run build:css
 ```
 
-`npm run build:css` compila `scss/main.scss` en `css/style.css`. GitHub Pages publica ese CSS ya compilado, así que el sitio en línea no necesita correr npm.
+`npm run build:css` compila `scss/main.scss` en `styles/style.css`. El CSS ya compilado está en el repositorio, así que el sitio en Vercel no necesita correr npm.
+
+## Carpetas
+
+- `index.html` en la raíz y las otras cuatro páginas en `pages/`.
+- Estilos en `scss/`. `scss/main.scss` solo importa los partials con `@use`.
+- CSS compilado en `styles/style.css`.
+- Imágenes e íconos en `assets/`.

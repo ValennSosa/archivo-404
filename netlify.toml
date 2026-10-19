@@ -1,0 +1,4 @@
+# Sitio estático. El CSS ya está compilado en styles/.
+[build]
+  publish = "."
+  command = ""
